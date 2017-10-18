@@ -32,7 +32,7 @@ func main() {
 	addr := flag.String("addr", ":8080", "server address")
 	peers := flag.String("pool", "http://localhost:8080", "server pool list")
 	flag.Parse()
-	http.HandleFunc("/color", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/color/", func(w http.ResponseWriter, r *http.Request) {
 		color := r.FormValue("name")
 		var b []byte
 		err := Group.Get(nil, color, groupcache.AllocatingByteSliceSink(&b))
