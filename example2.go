@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
-	"github.com/golang/groupcache"
+	groupcache "./groupcache"
 	"io"
 	"log"
 	"net"
@@ -41,7 +41,7 @@ func main() {
 	// Setup the doozer connection.
 
 	// Setup the cache.
-	addr:="127.0.0.1:8000"
+	addr:="127.0.0.1:9000"
 	pool = groupcache.NewHTTPPool("http://" + addr)
 
 	dict = groupcache.NewGroup("dict", 64<<20, groupcache.GetterFunc(
