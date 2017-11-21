@@ -4,7 +4,7 @@
 
 package testpb
 
-import proto "github.com/golang/protobuf/proto"
+import proto "./protobuf/proto"
 import json "encoding/json"
 import math "math"
 

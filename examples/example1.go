@@ -1,15 +1,15 @@
 package main
 
 import (
-	memcached "github.com/mattrobenolt/go-memcached"
+	memcached "./go-memcached"
 )
 
-type Cache struct {}
+type Cache struct{}
 
 func (c *Cache) Get(key string) (item *memcached.Item, err error) {
 	if key == "hello" {
 		item = &memcached.Item{
-			Key: key,
+			Key:   key,
 			Value: []byte("world"),
 		}
 		return item, nil
